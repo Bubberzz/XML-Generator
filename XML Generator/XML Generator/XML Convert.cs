@@ -38,6 +38,7 @@ namespace XML_Generator
                 {
                     filename = saveXml.FileName;
                     Form1.Invoke(new MethodInvoker(delegate () { Form1.SavedFilename = Path.GetFileName(filename); }));
+                    Form1.Invoke(new MethodInvoker(delegate () { Form1.SavedFilePath = Path.GetFullPath(filename); }));
                     Form1.Invoke(new MethodInvoker(delegate () { Form1.SaveFileDialogResult = " saved!"; }));
                 }
                 else
@@ -58,7 +59,7 @@ namespace XML_Generator
                         sb.AppendFormat("<dataheader>");
                         for (var i = 0; i < LocalData.Columns.Count; i++)
                         {
-                            sb.AppendFormat("<{0}>{1}</{0}>", LocalData.Columns[i].ColumnName.ToUpper(), row[i]);
+                            sb.AppendFormat("<{0}>{1}</{0}>", LocalData.Columns[i].ColumnName.ToLower(), row[i]);
                         }
                         sb.AppendFormat("</dataheader>");
                     }

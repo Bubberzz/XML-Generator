@@ -131,6 +131,16 @@ namespace XML_Generator
                 {
                     case "ITL":
                         sqlWrapper.CreateXmlItl();
+                        try
+                        {
+                            var text1 = File.ReadAllText(SavedFilePath);
+                            text1 = text1.Replace("&", "&amp;");
+                            File.WriteAllText(SavedFilePath, text1);
+                        }
+                        catch (Exception)
+                        {
+                            // ignored
+                        }
                         break;
                     case "PADEX":
                         {
@@ -145,6 +155,7 @@ namespace XML_Generator
                                 text1 = text1.Replace("ACTION1", "ACTION");
                                 text1 = text1.Replace("CLIENT_ID1", "CLIENT_ID");
                                 text1 = text1.Replace("PRE_ADVICE_ID1", "PRE_ADVICE_ID");
+                                text1 = text1.Replace("&", "&amp;");
                                 File.WriteAllText(SavedFilePath, text1);
                             }
                             catch (Exception)
