@@ -124,7 +124,7 @@ namespace XML_Generator
                         sb.AppendFormat("<dataline>");
                         for (i = 14; i < LocalData.Columns.Count; i++)
                         {
-                            sb.AppendFormat("<{0}>{1}</{0}>", LocalData.Columns[i].ColumnName.ToUpper(), row[i]);
+                            sb.AppendFormat("<{0}>{1}</{0}>", LocalData.Columns[i].ColumnName.ToLower(), row[i]);
                         }
                         sb.AppendFormat("</dataline>");
                     }
