@@ -151,10 +151,10 @@ namespace XML_Generator
                             try
                             {
                                 var text1 = File.ReadAllText(SavedFilePath);
-                                text1 = text1.Replace("RECORD_TYPE1", "RECORD_TYPE");
-                                text1 = text1.Replace("ACTION1", "ACTION");
-                                text1 = text1.Replace("CLIENT_ID1", "CLIENT_ID");
-                                text1 = text1.Replace("PRE_ADVICE_ID1", "PRE_ADVICE_ID");
+                                text1 = text1.Replace("record_type1", "record_type");
+                                text1 = text1.Replace("action1", "action");
+                                text1 = text1.Replace("client_id1", "client_id");
+                                text1 = text1.Replace("pre_advice_id1", "pre_advice_id");
                                 text1 = text1.Replace("&", "&amp;");
                                 File.WriteAllText(SavedFilePath, text1);
                             }
